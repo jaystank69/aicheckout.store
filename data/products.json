@@ -3,8 +3,8 @@
     "id": "ai-checkout-starter",
     "name": "AI Checkout Starter",
     "price": 29,
-    "badge": "New",
-    "desc": "Plug-and-play checkout template with AI-assisted copy and validation.",
+    "badge": "Works in ChatGPT",
+    "desc": "Production-ready checkout template for OpenAI’s Buy it in ChatGPT.",
     "image": "/assets/og-image.png"
   },
   {
