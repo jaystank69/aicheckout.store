@@ -1,3 +1,5 @@
+const API = 'https://aicheckout-api.financebrocracked.workers.dev';
+
 // ========= Helpers =========
 const $  = (s, c=document) => c.querySelector(s);
 const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
@@ -34,10 +36,11 @@ try {
 
 // ========= Products (home) =========
 async function renderProducts() {
-  const grid = $('#grid');
+  const grid = document.getElementById('grid');
   if (!grid) return;
+
   try {
-    const res = await fetch('/data/products.json', { cache: 'no-cache' });
+    const res = await fetch(`${API}/products`, { cache: 'no-store' });
     const items = await res.json();
 
     grid.innerHTML = items.map(p => `
@@ -57,12 +60,13 @@ async function renderProducts() {
       </article>
     `).join('');
 
-    attachReveals();
-  } catch {
-    grid.innerHTML = `<p class="muted">Could not load products. Check <code>data/products.json</code>.</p>`;
+    // keep your reveal() call if you have one
+  } catch (e) {
+    grid.innerHTML = `<p class="muted">Could not load products from API.</p>`;
   }
 }
 renderProducts();
+
 
 // ========= IntersectionObserver reveals =========
 function attachReveals(){
