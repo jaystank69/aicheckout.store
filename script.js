@@ -3,6 +3,22 @@ const $  = (s, c=document) => c.querySelector(s);
 const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
 const yearEl = $("#year"); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Kill intro veil even if GSAP fails to load
+(function ensureVeilGoesAway() {
+  const veil = document.querySelector('.intro-veil');
+  if (!veil) return;
+
+  // If GSAP isn't present, fade it out and remove
+  if (typeof gsap === 'undefined') {
+    window.addEventListener('load', () => {
+      veil.style.transition = 'opacity .6s ease';
+      veil.style.opacity = '0';
+      setTimeout(() => veil.remove(), 700);
+    });
+  }
+})();
+
+
 // ========= Lenis Smooth Scroll =========
 try {
   const lenis = new Lenis({ duration: 1.1, smoothWheel: true, smoothTouch: false });
