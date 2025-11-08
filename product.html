@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product — AI Checkout Store</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="nebula"></div>
+  <div class="floaters">
+    <span class="pentagon p1"></span>
+    <span class="pentagon p2"></span>
+    <span class="pentagon p3"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/"><img src="/assets/favicon.png" class="logo" alt=""> <span>AI Checkout Store</span></a>
+      <nav class="nav"><a href="/">Home</a><a href="/#products">Products</a></nav>
+    </div>
+  </header>
+
+  <main class="product-main">
+    <div class="container">
+      <div id="product-card" class="product-detail card-lg"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© <span id="year"></span> AI Checkout Store</p></div></footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+
+    async function load() {
+      const res = await fetch('/data/products.json', { cache: 'no-cache' });
+      const items = await res.json();
+      const product = items.find(p => p.id === id);
+      const el = document.getElementById('product-card');
+
+      if (!product) {
+        el.innerHTML = '<p class="muted">Product not found.</p>';
+        return;
+      }
+
+      el.innerHTML = `
+        <div class="detail">
+          <img src="${product.image}" alt="${product.name}" class="detail-image">
+          <div class="detail-body">
+            <div class="badge">${product.badge || ''}</div>
+            <h1>${product.name}</h1>
+            <p class="muted">${product.desc}</p>
+            <div class="price">$${product.price}</div>
+            <div class="actions">
+              <a class="btn primary" href="#">Buy (coming soon)</a>
+              <a class="btn ghost" href="/">Back</a>
+            </div>
+          </div>
+        </div>`;
+    }
+    load();
+  </script>
+</body>
+</html>
