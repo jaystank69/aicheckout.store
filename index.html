@@ -1,41 +1,43 @@
 <!doctype html>
-<html lang="no">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>aicheckout.store — Coming soon</title>
-  <!-- Favicon -->
-<link rel="icon" type="image/png" href="/assets/favicon.png" />
-<link rel="apple-touch-icon" href="/assets/favicon.png" />
-<meta name="theme-color" content="#0b0d12" />
+  <title>AI Checkout Store — Modern AI checkout templates</title>
 
-<!-- SEO -->
-<meta name="description" content="AI Checkout Store – Smart checkout templates and AI tools for modern online stores." />
-<meta name="keywords" content="AI, checkout, templates, ecommerce, automation, online store" />
-
-<!-- Open Graph (for link previews) -->
-<meta property="og:title" content="AI Checkout Store" />
-<meta property="og:description" content="Smart checkout templates and AI tools for modern online stores." />
-<meta property="og:url" content="https://aicheckout.store" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://aicheckout.store/assets/og-image.png" />
-
-  <meta name="description" content="AI Checkout Store – smarte verktøy og maler for nettbetaling og AI-kommers.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- SEO + social -->
+  <meta name="description" content="Smart checkout templates and AI tools for modern online stores." />
+  <meta property="og:title" content="AI Checkout Store" />
+  <meta property="og:description" content="Smart checkout templates and AI tools for modern online stores." />
+  <meta property="og:image" content="https://aicheckout.store/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#0b0d12" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+  <!-- Animated background -->
+  <div class="nebula"></div>
+  <div class="floaters">
+    <span class="pentagon p1"></span>
+    <span class="pentagon p2"></span>
+    <span class="pentagon p3"></span>
+    <span class="pentagon p4"></span>
+    <span class="pentagon p5"></span>
+  </div>
+
   <header class="site-header">
     <div class="container">
       <a class="brand" href="/">
-        <img src="/assets/logo.svg" alt="aicheckout.store" class="logo" />
-        <span>aicheckout.store</span>
+        <img src="/assets/favicon.png" alt="AI Checkout Store" class="logo" />
+        <span>AI Checkout Store</span>
       </a>
       <nav class="nav">
-        <a href="#about">Om</a>
-        <a href="#features">Funksjoner</a>
-        <a href="#subscribe" class="btn">Hold meg oppdatert</a>
+        <a href="/">Home</a>
+        <a href="#products">Products</a>
+        <a href="https://github.com/jaystank69/aicheckout.store" class="btn ghost">Source</a>
       </nav>
     </div>
   </header>
@@ -43,48 +45,25 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>AI-drevne betalingsløsninger – enkelt.</h1>
-        <p>Vi bygger maler, snippets og mikroverktøy som lar deg teste og lansere betaling med AI-hjelp raskt.</p>
+        <h1>AI-powered checkout templates</h1>
+        <p>Launch faster with prebuilt, beautiful, and customizable checkout flows.</p>
         <div class="cta">
-          <a href="#subscribe" class="btn primary">Få lanseringsvarsel</a>
-          <a href="https://github.com/<brukernavn>/aicheckoutstore" class="btn ghost">Se kildekode</a>
+          <a href="#products" class="btn primary">Browse products</a>
         </div>
       </div>
     </section>
 
-    <section id="features" class="features">
-      <div class="container grid">
-        <div class="card">
-          <h3>Plug-and-play</h3>
-          <p>Klar HTML/JS du kan lime rett inn. Ingen byggsteg nødvendig.</p>
-        </div>
-        <div class="card">
-          <h3>Malbibliotek</h3>
-          <p>Checkout-sider, kvitteringsemail, webhooks og mer.</p>
-        </div>
-        <div class="card">
-          <h3>AI-assist</h3>
-          <p>Tekst, validering og små automasjoner med AI.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="subscribe" class="subscribe">
+    <section id="products" class="products">
       <div class="container">
-        <h2>Vil du ha beskjed når vi lanserer?</h2>
-        <form action="https://formsubmit.co/your@email" method="POST" class="signup">
-          <input type="email" name="email" placeholder="din@epost.no" required>
-          <button type="submit" class="btn primary">Gi meg beskjed</button>
-          <!-- Tips: bytt ut action med ditt skjema (Netlify Forms, Formspree, Getform, etc.) -->
-        </form>
-        <p class="fineprint">Ingen spam. Du kan melde deg av når som helst.</p>
+        <h2 class="section-title">Products</h2>
+        <div id="grid" class="grid"></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> aicheckout.store</p>
+      <p>© <span id="year"></span> AI Checkout Store</p>
     </div>
   </footer>
 
