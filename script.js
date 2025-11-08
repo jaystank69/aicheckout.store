@@ -3,41 +3,33 @@ const $  = (s, c=document) => c.querySelector(s);
 const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
 const yearEl = $("#year"); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Kill intro veil even if GSAP fails to load
+// Always remove intro veil even if libs fail
 (function ensureVeilGoesAway() {
   const veil = document.querySelector('.intro-veil');
   if (!veil) return;
-
-  // If GSAP isn't present, fade it out and remove
-  if (typeof gsap === 'undefined') {
-    window.addEventListener('load', () => {
-      veil.style.transition = 'opacity .6s ease';
-      veil.style.opacity = '0';
-      setTimeout(() => veil.remove(), 700);
-    });
-  }
+  window.addEventListener('load', () => {
+    veil.style.transition = 'opacity .6s ease';
+    veil.style.opacity = '0';
+    setTimeout(() => veil.remove(), 700);
+  });
 })();
-
 
 // ========= Lenis Smooth Scroll =========
 try {
   const lenis = new Lenis({ duration: 1.1, smoothWheel: true, smoothTouch: false });
   requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); });
-} catch { /* ignore if offline */ }
+} catch { /* ignore offline */ }
 
 // ========= Cursor Glow =========
 (function cursorGlow(){
   const glow = $("#cursor-glow");
   if (!glow) return;
-  let rafId = null, targetX = 0, targetY = 0, x = window.innerWidth/2, y = window.innerHeight/2;
-
+  let rafId = null, tx = innerWidth/2, ty = innerHeight/2, x = tx, y = ty;
   const animate = () => {
-    x += (targetX - x) * 0.12;
-    y += (targetY - y) * 0.12;
-    glow.style.transform = `translate(${x}px, ${y}px)`;
-    rafId = requestAnimationFrame(animate);
+    x += (tx - x) * 0.12; y += (ty - y) * 0.12;
+    glow.style.transform = `translate(${x}px, ${y}px)`; rafId = requestAnimationFrame(animate);
   };
-  window.addEventListener('mousemove', e => { targetX = e.clientX; targetY = e.clientY; if (!rafId) animate(); }, { passive:true });
+  addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; if (!rafId) animate(); }, { passive:true });
 })();
 
 // ========= Products (home) =========
@@ -74,20 +66,14 @@ renderProducts();
 
 // ========= IntersectionObserver reveals =========
 function attachReveals(){
-  const els = $$('.reveal');
-  if (!els.length) return;
+  const els = $$('.reveal'); if (!els.length) return;
   const io = new IntersectionObserver((entries) => {
-    entries.forEach((en, i) => {
-      if (en.isIntersecting){
-        en.target.classList.add('show');
-        io.unobserve(en.target);
-      }
-    });
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); } });
   }, { threshold: 0.12 });
   els.forEach(el => io.observe(el));
 }
 
-// ========= three.js starfield (already in your page) =========
+// ========= three.js: subtle starfield =========
 (function initThree(){
   const canvas = document.getElementById('bg3d');
   if (!canvas || typeof THREE === 'undefined') return;
@@ -109,16 +95,16 @@ function attachReveals(){
     pos[i*3+2] = (Math.random()-0.5)*320;
   }
   geometry.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  const material = new THREE.PointsMaterial({ size:1.2, transparent:true, opacity:.6, color:0x7c9cff });
+  const material = new THREE.PointsMaterial({ size:1.2, transparent:true, opacity:.55, color:0x10a37f });
   const stars = new THREE.Points(geometry, material);
   scene.add(stars);
 
   let t=0;
   (function animate(){
     requestAnimationFrame(animate);
-    t+=0.0015;
-    stars.rotation.y += 0.0008;
-    stars.position.y = Math.sin(t)*2;
+    t+=0.0014;
+    stars.rotation.y += 0.0007;
+    stars.position.y = Math.sin(t)*1.8;
     renderer.render(scene, camera);
   })();
 
@@ -130,22 +116,20 @@ function attachReveals(){
   if (typeof gsap === 'undefined') return;
   if (gsap.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
 
-  // Cinematic intro: fade veil, then bring hero in
   const tl = gsap.timeline();
-  tl.to('.intro-veil', { opacity: 0, duration: 0.9, ease: 'power2.out', delay: 0.2 })
+  tl.to('.intro-veil', { opacity: 0, duration: 0.8, ease: 'power2.out', delay: 0.15 })
     .set('.intro-veil', { display: 'none' })
-    .from('.site-header', { y: -18, opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-    .from('.hero h1', { y: 18, opacity: 0, duration: 0.7, ease: 'power2.out' }, '-=0.2')
-    .from('.hero p',  { y: 12, opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4')
-    .from('.cta .btn', { y: 10, opacity: 0, duration: 0.5, ease: 'power2.out', stagger: 0.06 }, '-=0.45');
+    .from('.site-header', { y: -18, opacity: 0, duration: 0.55, ease: 'power2.out' }, '-=0.25')
+    .from('.hero h1', { y: 18, opacity: 0, duration: 0.65, ease: 'power2.out' }, '-=0.2')
+    .from('.hero p',  { y: 12, opacity: 0, duration: 0.55, ease: 'power2.out' }, '-=0.35')
+    .from('.cta .btn', { y: 10, opacity: 0, duration: 0.45, ease: 'power2.out', stagger: 0.05 }, '-=0.4');
 
-  // Parallax for background layers
   if (gsap.ScrollTrigger){
     gsap.to('.nebula', { yPercent: -10, ease:'none',
       scrollTrigger:{ trigger:'body', start:'top top', end:'bottom bottom', scrub:1 }});
     gsap.utils.toArray('.pentagon').forEach((el,i)=>{
-      gsap.to(el, { y:(i%2?-40:40), x:(i%2?20:-20), rotation:i%2?10:-8, ease:'none',
-        scrollTrigger:{ trigger:'body', start:'top top', end:'bottom bottom', scrub:1.2 }});
+      gsap.to(el, { y:(i%2?-36:36), x:(i%2?16:-16), rotation:i%2?10:-8, ease:'none',
+        scrollTrigger:{ trigger:'body', start:'top top', end:'bottom bottom', scrub:1.15 }});
     });
   }
 })();
