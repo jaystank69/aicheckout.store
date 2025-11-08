@@ -1,0 +1,23 @@
+[
+  {
+    "source_id": "ali_sku_1001",
+    "title": "Mini Rechargeable Milk Frother",
+    "desc": "Silky foam in 15 seconds. USB-C, stainless steel whisk.",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
+    "usd_price": 12.99
+  },
+  {
+    "source_id": "ali_sku_1002",
+    "title": "Universal Phone Tripod + Remote",
+    "desc": "Flexible legs, Bluetooth remote. Great for vlogs and travel.",
+    "image": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43",
+    "usd_price": 16.50
+  },
+  {
+    "source_id": "ali_sku_1003",
+    "title": "Magnetic Cable Organizer (5-pack)",
+    "desc": "Snap-on cable clips keep your desk clean.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "usd_price": 9.90
+  }
+]
