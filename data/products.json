@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ai-checkout-starter",
+    "name": "AI Checkout Starter",
+    "price": 29,
+    "badge": "New",
+    "desc": "Plug-and-play checkout template with AI-assisted copy and validation.",
+    "image": "/assets/og-image.png"
+  },
+  {
+    "id": "receipt-mailer-pro",
+    "name": "Receipt Mailer Pro",
+    "price": 19,
+    "badge": "Popular",
+    "desc": "Beautiful receipt emails with tokens, tax breakdown and PDF attach.",
+    "image": "/assets/og-image.png"
+  },
+  {
+    "id": "webhook-lab",
+    "name": "Webhook Lab",
+    "price": 24,
+    "badge": "Beta",
+    "desc": "Local dev webhook emulator + signature verifier for quick testing.",
+    "image": "/assets/og-image.png"
+  }
+]
