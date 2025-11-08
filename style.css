@@ -103,3 +103,30 @@ body{
 @media (max-width:860px){
   .detail{grid-template-columns:1fr}
 }
+/* three.js canvas sits at the very back */
+#bg3d{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: -3; /* behind .nebula (-2) and .floaters (-1) */
+  pointer-events: none;
+}
+
+/* Reveal-on-scroll helper */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Optional: parallax depth hints */
+.parallax-slow  { will-change: transform; }
+.parallax-fast  { will-change: transform; }
+
