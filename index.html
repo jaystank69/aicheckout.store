@@ -1,5 +1,77 @@
-# om repoet er tomt
-echo "<!doctype html><meta charset='utf-8'><title>aicheckout.store</title><h1>Hei 👋</h1>" > index.html
-git add index.html
-git commit -m "Første side"
-git push
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>aicheckout.store — Coming soon</title>
+  <meta name="description" content="AI Checkout Store – smarte verktøy og maler for nettbetaling og AI-kommers.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="aicheckout.store" class="logo" />
+        <span>aicheckout.store</span>
+      </a>
+      <nav class="nav">
+        <a href="#about">Om</a>
+        <a href="#features">Funksjoner</a>
+        <a href="#subscribe" class="btn">Hold meg oppdatert</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>AI-drevne betalingsløsninger – enkelt.</h1>
+        <p>Vi bygger maler, snippets og mikroverktøy som lar deg teste og lansere betaling med AI-hjelp raskt.</p>
+        <div class="cta">
+          <a href="#subscribe" class="btn primary">Få lanseringsvarsel</a>
+          <a href="https://github.com/<brukernavn>/aicheckoutstore" class="btn ghost">Se kildekode</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container grid">
+        <div class="card">
+          <h3>Plug-and-play</h3>
+          <p>Klar HTML/JS du kan lime rett inn. Ingen byggsteg nødvendig.</p>
+        </div>
+        <div class="card">
+          <h3>Malbibliotek</h3>
+          <p>Checkout-sider, kvitteringsemail, webhooks og mer.</p>
+        </div>
+        <div class="card">
+          <h3>AI-assist</h3>
+          <p>Tekst, validering og små automasjoner med AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribe" class="subscribe">
+      <div class="container">
+        <h2>Vil du ha beskjed når vi lanserer?</h2>
+        <form action="https://formsubmit.co/your@email" method="POST" class="signup">
+          <input type="email" name="email" placeholder="din@epost.no" required>
+          <button type="submit" class="btn primary">Gi meg beskjed</button>
+          <!-- Tips: bytt ut action med ditt skjema (Netlify Forms, Formspree, Getform, etc.) -->
+        </form>
+        <p class="fineprint">Ingen spam. Du kan melde deg av når som helst.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> aicheckout.store</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
