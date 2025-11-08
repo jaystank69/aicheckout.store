@@ -3,30 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Checkout Store — Modern AI checkout templates</title>
+  <title>AI Checkout Store — Buy it in ChatGPT partner</title>
 
-  <!-- SEO + social -->
-  <meta name="description" content="Smart checkout templates and AI tools for modern online stores." />
-  <meta property="og:title" content="AI Checkout Store" />
-  <meta property="og:description" content="Smart checkout templates and AI tools for modern online stores." />
+  <!-- Meta / Social -->
+  <meta name="description" content="The leading partner hub for OpenAI’s ‘Buy it in ChatGPT’. Discover templates and tools to sell directly inside ChatGPT." />
+  <meta property="og:title" content="AI Checkout Store — Buy it in ChatGPT partner" />
+  <meta property="og:description" content="Templates and tools to sell directly in ChatGPT." />
   <meta property="og:image" content="https://aicheckout.store/assets/og-image.png" />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
-  <meta name="theme-color" content="#0b0d12" />
+  <meta name="theme-color" content="#0e0f12" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <!-- Animated background -->
-  <!-- Page intro overlay -->
-<div class="intro-veil"></div>
+  <!-- Helpers -->
+  <div class="intro-veil"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
 
-<!-- Soft cursor glow -->
-<div id="cursor-glow" aria-hidden="true"></div>
-
+  <!-- 3D background + layers -->
   <canvas id="bg3d" aria-hidden="true"></canvas>
-
   <div class="nebula"></div>
   <div class="floaters">
     <span class="pentagon p1"></span>
@@ -38,14 +35,11 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/">
-        <img src="/assets/favicon.png" alt="AI Checkout Store" class="logo" />
-        <span>AI Checkout Store</span>
-      </a>
+      <a class="brand" href="/"><img src="/assets/favicon.png" alt="AI Checkout Store" class="logo" /><span>AI Checkout Store</span></a>
       <nav class="nav">
         <a href="/">Home</a>
         <a href="#products">Products</a>
-        <a href="https://github.com/jaystank69/aicheckout.store" class="btn ghost">Source</a>
+        <a href="https://chat.openai.com" class="btn ghost" rel="noopener">Open ChatGPT</a>
       </nav>
     </div>
   </header>
@@ -53,17 +47,19 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>AI-powered checkout templates</h1>
-        <p>Launch faster with prebuilt, beautiful, and customizable checkout flows.</p>
+        <span class="badge-inline">Official-style partner look</span>
+        <h1>Sell directly inside ChatGPT</h1>
+        <p>We craft serious, production-ready templates for OpenAI’s “Buy it in ChatGPT” — fast to implement, beautiful, and extensible.</p>
         <div class="cta">
-          <a href="#products" class="btn primary">Browse products</a>
+          <a href="#products" class="btn primary">Browse templates</a>
+          <a href="https://github.com/jaystank69/aicheckout.store" class="btn ghost">View source</a>
         </div>
       </div>
     </section>
 
     <section id="products" class="products">
       <div class="container">
-        <h2 class="section-title">Products</h2>
+        <h2 class="section-title">Featured products</h2>
         <div id="grid" class="grid"></div>
       </div>
     </section>
@@ -71,20 +67,29 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> AI Checkout Store</p>
+      <p>© <span id="year"></span> AI Checkout Store • Not affiliated with OpenAI</p>
     </div>
   </footer>
-<!-- GSAP + ScrollTrigger -->
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-<!-- Lenis (smooth scroll) -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+  <!-- Safety: always remove veil on load even if libs fail -->
+  <script>
+    window.addEventListener('load', function(){
+      const v = document.querySelector('.intro-veil');
+      if (v){ v.style.transition='opacity .6s ease'; v.style.opacity='0'; setTimeout(()=>v.remove(), 700); }
+    });
+  </script>
 
-<!-- three.js -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
+  <!-- Lenis (smooth scroll) -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+
+  <!-- three.js -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+  <!-- App (must be last) -->
   <script src="/script.js"></script>
-  
 </body>
 </html>
