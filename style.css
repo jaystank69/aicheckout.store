@@ -129,4 +129,84 @@ body{
 /* Optional: parallax depth hints */
 .parallax-slow  { will-change: transform; }
 .parallax-fast  { will-change: transform; }
+/* ===== Slick Startup Enhancements ===== */
+
+/* Intro veil (fade away on load) */
+.intro-veil{
+  position: fixed; inset: 0; z-index: 9999;
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(20,24,36,.85), rgba(11,13,18,1) 60%),
+    linear-gradient(0deg, rgba(12,15,23,1), rgba(12,15,23,1));
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Cursor glow */
+#cursor-glow{
+  position: fixed; width: 320px; height: 320px;
+  margin:-160px 0 0 -160px; /* center on cursor */
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(124,156,255,.25), rgba(124,156,255,0) 70%);
+  mix-blend-mode: screen;
+  pointer-events: none; z-index: 0; opacity: .35; filter: blur(6px);
+}
+
+/* Glassier header + subtle border */
+.site-header{ background: rgba(11,13,18,0.55); border-bottom:1px solid rgba(124,156,255,.15) }
+
+/* Buttons: neon + sheen */
+.btn{
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s;
+  will-change: transform, box-shadow;
+}
+.btn.primary{
+  box-shadow: 0 0 0 rgba(124,156,255,0);
+}
+.btn.primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(124,156,255,.35), 0 0 40px rgba(124,156,255,.22) inset;
+}
+.btn.primary::after{
+  content:""; position:absolute; inset:-1px; border-radius:12px;
+  background: linear-gradient(120deg, rgba(124,156,255,.0), rgba(124,156,255,.35), rgba(124,156,255,.0));
+  filter: blur(8px); opacity:.0; transition: opacity .25s ease;
+}
+.btn.primary:hover::after{ opacity:.7 }
+
+/* Sheen sweep on hover (works on any .btn) */
+.btn::before{
+  content:""; position:absolute; top:-40%; left:-30%; width:30%; height:180%;
+  transform: rotate(20deg) translateX(-120%);
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.15), rgba(255,255,255,0));
+  transition: transform .6s ease; pointer-events: none; border-radius: 8px;
+}
+.btn:hover::before{ transform: rotate(20deg) translateX(420%) }
+
+/* Cards: lift + glow on hover */
+.card{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(124,156,255,.25);
+  box-shadow: 0 14px 40px rgba(124,156,255,.12), 0 4px 14px rgba(0,0,0,.35);
+}
+
+/* Section title underline accent */
+.section-title{
+  position: relative; display: inline-block; padding-bottom: 4px;
+}
+.section-title::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+  background: linear-gradient(90deg, rgba(124,156,255,.0), rgba(124,156,255,.8), rgba(124,156,255,.0));
+  filter: drop-shadow(0 0 6px rgba(124,156,255,.6));
+}
+
+/* Optional animated accent border for images */
+.product .media img{
+  border-radius: 10px;
+  outline: 1px solid rgba(124,156,255,.18);
+  box-shadow: inset 0 0 40px rgba(124,156,255,.05);
+}
 
