@@ -52,14 +52,21 @@
   <!-- three.js -->
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+ <script>
+  // Year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
+  // ✅ Use your live API (Workers)
+  const API = 'https://aicheckout-api.financebrocracked.workers.dev';
 
-    async function load() {
-      const res = await fetch('/data/products.json', { cache: 'no-cache' });
+  // Read ?id=... from URL
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+
+  // Load product from API
+  async function load() {
+    try {
+      const res = await fetch(`${API}/products`, { cache: 'no-store' });
       const items = await res.json();
       const product = items.find(p => p.id === id);
       const el = document.getElementById('product-card');
@@ -75,14 +82,24 @@
             <p class="muted">${product.desc}</p>
             <div class="price">$${product.price}</div>
             <div class="actions">
-              <a class="btn primary" href="https://chat.openai.com" rel="noopener">Buy in ChatGPT</a>
+              <a class="btn primary" href="#" onclick="buy('${product.id}');return false;">Buy</a>
               <a class="btn ghost" href="/">Back</a>
             </div>
           </div>
         </div>`;
+    } catch (e) {
+      document.getElementById('product-card').innerHTML =
+        '<p class="muted">Could not load product from API.</p>';
     }
-    load();
-  </script>
+  }
+  load();
+
+  // Placeholder — next step will call your /checkout/session endpoint and redirect to Stripe
+  async function buy(productId){
+    alert('Checkout coming next. Product: ' + productId);
+  }
+</script>
+
 
   <!-- Your app animations (kept minimal on detail page) -->
   <script src="/script.js"></script>
