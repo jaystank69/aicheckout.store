@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sticker Blast! – 50/100pcs Cartoon Sticker Pack</title>
-  <meta name="description" content="Vivid, waterproof cartoon sticker pack for laptops, phones & more. Limited‑time 40% off!" />
+  <meta name="description" content="Vivid, waterproof cartoon sticker pack for laptops, phones & more. Limited-time 40% off!" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
       --yellow: #ffd60a; /* primary burst yellow */
       --yellow-ink: #ffb703; /* accent */
       --ink: #111; /* comic black */
-      --paper: #fff9e6; /* warm off‑white */
+      --paper: #fff9e6; /* warm off-white */
       --accent: #29b6f6; /* cyan accent */
       --accent-2: #ff4d6d; /* pink accent */
       --ok: #2ecc71; /* green */
@@ -54,7 +54,7 @@
 
     /* HERO */
     .hero { display:grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items:center; padding: 40px 0 24px; }
-    @media (max-width: 860px){ .hero { grid-template-columns: 1fr; padding-top: 20px; } }
+    @media (max-width: 1024px){ .hero { grid-template-columns: 1fr; padding-top: 24px; } }
 
     .burst-card {
       position: relative; background: white; border: 5px solid #000; border-radius: 28px; padding: 18px; box-shadow: 0 16px 0 #000;
@@ -103,7 +103,7 @@
     /* Sections */
     section { padding: 42px 0; }
     .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 860px){ .features { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px){ .features { grid-template-columns: 1fr; } }
 
     .feature { position:relative; padding-left: 14px; }
     .feature:before { content:""; position:absolute; left: -2px; top: 10px; width: 8px; height: 8px; background: var(--accent); border:3px solid #000; transform: rotate(20deg); }
@@ -127,6 +127,30 @@
     /* Utility */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .muted{opacity:.7}
+
+    /* ————— Full-bleed mobile fixes ————— */
+    @media (max-width: 640px){
+      html, body { margin:0; padding:0; }
+      .container { width:100vw; max-width:100vw; padding:0; margin:0; }
+      header .nav { padding:12px 12px; }
+
+      /* Stack hero and pull image to edges */
+      .hero { grid-template-columns: 1fr; gap:16px; padding:16px 0; }
+      .burst-card { border-radius:16px; padding:8px; box-shadow:0 12px 0 #000;
+        margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+      }
+      .burst-svg { inset: -26px -16px -26px -16px; }
+      .sticker-sheet { width:100%; display:block; }
+
+      /* Scale text & controls */
+      h1 { font-size: clamp(30px, 8vw, 44px); }
+      .price-row { flex-wrap: wrap; }
+      .cta { width:100%; text-align:center; font-size:18px; }
+      .options { gap:8px; }
+
+      /* Prevent decorative overlap */
+      .floater { display:none; }
+    }
   </style>
 </head>
 <body>
@@ -163,8 +187,8 @@
       </div>
 
       <div>
-        <h1 class="headline">50/100‑Pack<br/> Cartoon Sticker Kit</h1>
-        <p style="font-size:18px; font-weight:600; margin: 6px 0 10px;">Waterproof • Laptop & Phone Safe • Ultra‑Vivid Color</p>
+        <h1 class="headline">50/100-Pack<br/> Cartoon Sticker Kit</h1>
+        <p style="font-size:18px; font-weight:600; margin: 6px 0 10px;">Waterproof • Laptop & Phone Safe • Ultra-Vivid Color</p>
 
         <div class="price-row">
           <div class="price-now">NOK <span id="price">10.34</span></div>
@@ -200,10 +224,10 @@
       <div class="features">
         <div class="card">
           <h3 class="feature">Stick Anywhere</h3>
-          <p>Perfect for laptops, phones, bottles, boards, cases & more. Leaves your gear looking <strong>mega‑fresh</strong>.</p>
+          <p>Perfect for laptops, phones, bottles, boards, cases & more. Leaves your gear looking <strong>mega-fresh</strong>.</p>
         </div>
         <div class="card">
-          <h3 class="feature">Waterproof & Fade‑Safe</h3>
+          <h3 class="feature">Waterproof & Fade-Safe</h3>
           <p>Glossy vinyl + UV print keeps colors bright and edges crisp. Peel, stick, flex—no smudges.</p>
         </div>
         <div class="card">
@@ -235,10 +259,10 @@
     <section>
       <div class="card">
         <h3 style="margin-top:0">FAQ</h3>
-        <p><strong>What’s in a pack?</strong> A hand‑picked mix of 50 or 100 glossy cartoon stickers.</p>
-        <p><strong>Are these waterproof?</strong> Yes. Splash‑safe and UV‑printed to resist fading.</p>
-        <p><strong>Will they damage my device?</strong> No—adhesive is strong yet removes cleanly from most hard, non‑porous surfaces.</p>
-        <p><strong>Shipping & returns?</strong> Tracked shipping worldwide. 30‑day easy returns if unused.</p>
+        <p><strong>What’s in a pack?</strong> A hand-picked mix of 50 or 100 glossy cartoon stickers.</p>
+        <p><strong>Are these waterproof?</strong> Yes. Splash-safe and UV-printed to resist fading.</p>
+        <p><strong>Will they damage my device?</strong> No—adhesive is strong yet removes cleanly from most hard, non-porous surfaces.</p>
+        <p><strong>Shipping & returns?</strong> Tracked shipping worldwide. 30-day easy returns if unused.</p>
       </div>
     </section>
   </main>
@@ -246,7 +270,7 @@
   <footer>
     <div class="container">
       <div>© <span id="year"></span> Sticker Blast – All rights reserved.</div>
-      <div class="muted" style="margin-top:6px">This fan‑style sticker mix is supplied by third‑party manufacturers. Ensure you have appropriate resale rights in your jurisdiction.</div>
+      <div class="muted" style="margin-top:6px">This fan-style sticker mix is supplied by third-party manufacturers. Ensure you have appropriate resale rights in your jurisdiction.</div>
     </div>
   </footer>
 
