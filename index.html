@@ -3,93 +3,302 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Checkout Store — Buy it in ChatGPT partner</title>
+  <title>Sticker Blast! – 50/100pcs Cartoon Sticker Pack</title>
+  <meta name="description" content="Vivid, waterproof cartoon sticker pack for laptops, phones & more. Limited‑time 40% off!" />
 
-  <!-- Meta / Social -->
-  <meta name="description" content="The leading partner hub for OpenAI’s ‘Buy it in ChatGPT’. Discover templates and tools to sell directly inside ChatGPT." />
-  <meta property="og:title" content="AI Checkout Store — Buy it in ChatGPT partner" />
-  <meta property="og:description" content="Templates and tools to sell directly in ChatGPT." />
-  <meta property="og:image" content="https://aicheckout.store/assets/og-image.png" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/favicon.png" />
-  <meta name="theme-color" content="#0e0f12" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #ffd60a; /* primary burst yellow */
+      --yellow-ink: #ffb703; /* accent */
+      --ink: #111; /* comic black */
+      --paper: #fff9e6; /* warm off‑white */
+      --accent: #29b6f6; /* cyan accent */
+      --accent-2: #ff4d6d; /* pink accent */
+      --ok: #2ecc71; /* green */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 30% 10%, #fff7cc 0%, #fff0a6 30%, #ffe066 60%, #ffde59 100%);
+      color: var(--ink);
+      font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Comic dot pattern overlay */
+    .dots {
+      position: fixed; inset: 0; pointer-events: none; opacity: .25; mix-blend-mode: multiply; z-index: 0;
+      background-image: radial-gradient(var(--yellow-ink) 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+      mask-image: radial-gradient(circle at 50% 40%, black 40%, transparent 70%);
+    }
+
+    /* Layout */
+    header { position: sticky; top:0; z-index: 40; backdrop-filter: saturate(1.5) blur(8px); }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 20px; border-bottom: 4px solid #000; background: rgba(255, 214, 10, .8);
+      box-shadow: 0 6px 0 #000;
+    }
+    .brand { font-family: 'Bangers', cursive; letter-spacing: .5px; font-size: 28px; display:flex; align-items:center; gap:12px; }
+    .brand-burst { width:36px; height:36px; display:inline-block; }
+
+    .container { width:min(1100px, 92vw); margin: 0 auto; position: relative; z-index: 1; }
+
+    /* HERO */
+    .hero { display:grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items:center; padding: 40px 0 24px; }
+    @media (max-width: 860px){ .hero { grid-template-columns: 1fr; padding-top: 20px; } }
+
+    .burst-card {
+      position: relative; background: white; border: 5px solid #000; border-radius: 28px; padding: 18px; box-shadow: 0 16px 0 #000;
+      transform: rotate(-1.2deg);
+      animation: bob 5s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{ transform: rotate(-1.2deg) translateY(0);} 50%{ transform: rotate(-2.2deg) translateY(-8px);} }
+
+    .sticker-sheet { width:100%; border-radius: 18px; border: 4px dashed #000; display:block; }
+
+    .burst-wrap { position: relative; }
+    .burst-svg { position:absolute; inset:-36px -24px -36px -24px; z-index:-1; filter: drop-shadow(0 12px 0 #000); }
+    .burst-svg path { fill: var(--paper); stroke:#000; stroke-width:10; }
+    .burst-sparks span{ position:absolute; width:16px; height:16px; background: var(--yellow-ink); border:3px solid #000; transform: rotate(15deg); border-radius: 3px; animation: pop 2.6s cubic-bezier(.2,.7,.2,1) infinite; }
+    .burst-sparks span:nth-child(1){ top: -22px; left: 20%; }
+    .burst-sparks span:nth-child(2){ top: -10px; right: 18%; animation-delay:.2s }
+    .burst-sparks span:nth-child(3){ bottom: -18px; left: 12%; animation-delay:.4s }
+    .burst-sparks span:nth-child(4){ bottom: -28px; right: 10%; animation-delay:.6s }
+    @keyframes pop { 0%,100%{ transform: translateY(0) rotate(20deg);} 50%{ transform: translateY(-10px) rotate(-6deg);} }
+
+    h1 { font-family:'Bangers', cursive; font-size: clamp(44px, 6vw, 76px); line-height: .95; margin: 10px 0 8px; text-shadow: 0 4px 0 #000; color:#fff; -webkit-text-stroke: 3px #000; letter-spacing: 1.2px; }
+    .headline { color: var(--ink); -webkit-text-stroke: 0; text-shadow:none; }
+
+    .badge { display:inline-flex; align-items:center; gap:8px; background:#fff; border: 4px solid #000; border-radius: 999px; padding: 8px 14px; font-weight:800; box-shadow: 0 6px 0 #000; }
+    .badge .dot { width:10px; height:10px; border-radius:50%; background: var(--ok); border:2px solid #000; }
+
+    .price-row { display:flex; align-items:flex-end; gap: 14px; margin: 6px 0 12px; }
+    .price-now { font-weight: 800; font-size: clamp(28px, 5vw, 44px); }
+    .price-was { text-decoration: line-through; opacity:.5; font-weight:600; }
+    .sale-tag { background: var(--accent-2); color:white; border: 4px solid #000; padding:6px 12px; border-radius:12px; font-weight:800; box-shadow: 0 4px 0 #000; transform: rotate(-2deg); }
+
+    .card { background:white; border: 5px solid #000; border-radius: 22px; padding: 18px; box-shadow: 0 12px 0 #000; }
+    .options { display:flex; gap:12px; margin: 12px 0 10px; flex-wrap: wrap; }
+    .chip { cursor:pointer; user-select:none; border:4px solid #000; background:#fff; padding:10px 14px; border-radius:14px; font-weight:800; box-shadow: 0 4px 0 #000; transition: transform .1s; }
+    .chip:hover { transform: translateY(-2px); }
+    .chip.active { background: var(--yellow); }
+
+    .cta { --height:64px; position:relative; display:inline-grid; place-items:center; height:var(--height); padding:0 22px; font-weight:900; font-size:22px; letter-spacing:.5px;
+      background: linear-gradient(180deg, #ffe36e, #ffd60a); border: 5px solid #000; border-radius: 18px; box-shadow: 0 12px 0 #000; cursor:pointer; }
+    .cta:active { transform: translateY(3px); box-shadow: 0 6px 0 #000; }
+    .cta .boom { position:absolute; inset:0; pointer-events:none; }
+
+    .trust-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top: 12px; }
+    .trust { display:flex; align-items:center; gap:8px; background:#fff; border: 3px solid #000; padding:6px 10px; border-radius: 999px; font-size:14px; }
+
+    /* Sections */
+    section { padding: 42px 0; }
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 860px){ .features { grid-template-columns: 1fr; } }
+
+    .feature { position:relative; padding-left: 14px; }
+    .feature:before { content:""; position:absolute; left: -2px; top: 10px; width: 8px; height: 8px; background: var(--accent); border:3px solid #000; transform: rotate(20deg); }
+
+    /* Floating sticker sprites */
+    .floaters { position:absolute; inset:0; pointer-events:none; z-index:0; }
+    .floater { position:absolute; width:70px; aspect-ratio:1; background:#fff; border: 4px solid #000; border-radius: 16px; display:grid; place-items:center; filter: drop-shadow(0 6px 0 #000);
+      animation: drift var(--t, 10s) ease-in-out infinite; }
+    .floater span { font-size: 38px; transform: rotate(var(--r, 0deg)); }
+    @keyframes drift { 0%,100%{ transform: translate(0,0) rotate(0deg);} 25%{ transform: translate(-12px,-8px) rotate(-8deg);} 50%{ transform: translate(6px,-18px) rotate(6deg);} 75%{ transform: translate(12px,6px) rotate(-6deg);} }
+
+    /* Reviews carousel (simple auto-scroll) */
+    .marquee { overflow:hidden; border:4px solid #000; border-radius:18px; background:#fff; box-shadow:0 8px 0 #000; }
+    .marquee-track { display:flex; gap:20px; padding:14px; animation: scroll 22s linear infinite; }
+    .bubble { background: var(--paper); border: 3px solid #000; border-radius: 16px; padding: 10px 12px; min-width: 240px; font-size: 14px; }
+    @keyframes scroll { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+    /* Footer */
+    footer { padding: 32px 0 60px; text-align:center; font-size: 14px; opacity:.8; }
+
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .muted{opacity:.7}
+  </style>
 </head>
 <body>
-  <!-- Helpers -->
-  <div class="intro-veil"></div>
-  <div id="cursor-glow" aria-hidden="true"></div>
+  <div class="dots" aria-hidden="true"></div>
 
-  <!-- 3D background + layers -->
-  <canvas id="bg3d" aria-hidden="true"></canvas>
-  <div class="nebula"></div>
-  <div class="floaters">
-    <span class="pentagon p1"></span>
-    <span class="pentagon p2"></span>
-    <span class="pentagon p3"></span>
-    <span class="pentagon p4"></span>
-    <span class="pentagon p5"></span>
-  </div>
-
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/"><img src="/assets/favicon.png" alt="AI Checkout Store" class="logo" /><span>AI Checkout Store</span></a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="#products">Products</a>
-        <a href="https://chat.openai.com" class="btn ghost" rel="noopener">Open ChatGPT</a>
-      </nav>
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <svg class="brand-burst" viewBox="0 0 120 120" aria-hidden="true"><path d="M59 7 l10 22 23-11 -8 23 24 6 -22 11 16 18 -24 0 5 24 -19-15 -14 21 -5-24 -24 8 12-21 -22-12 24-5 -7-24 22 14z" fill="var(--yellow)" stroke="#000" stroke-width="6"/></svg>
+        STICKER BLAST!
+      </div>
+      <div class="badge"><span class="dot"></span> 40% OFF – Today Only</div>
     </div>
   </header>
 
-  <main>
+  <main class="container">
+    <!-- HERO -->
     <section class="hero">
-      <div class="container">
-        <span class="badge-inline">Official-style partner look</span>
-        <h1>Sell directly inside ChatGPT</h1>
-        <p>We craft serious, production-ready templates for OpenAI’s “Buy it in ChatGPT” — fast to implement, beautiful, and extensible.</p>
-        <div class="cta">
-          <a href="#products" class="btn primary">Browse templates</a>
-          <a href="https://github.com/jaystank69/aicheckout.store" class="btn ghost">View source</a>
+      <div class="burst-card burst-wrap">
+        <!-- Decorative burst behind image -->
+        <svg class="burst-svg" viewBox="0 0 600 380" aria-hidden="true">
+          <path d="M20 190 l90-40 20-80 70 50 80-40 30 70 100-30 -10 80 80 50 -90 10 -20 80 -70-40 -70 50 -30-80 -90 30 10-80 -100-30 60-30z" />
+        </svg>
+        <img class="sticker-sheet" src="/assets/product-collage.jpg" alt="Cartoon sticker mega pack collage" />
+        <div class="burst-sparks" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="floaters" aria-hidden="true">
+          <div class="floater" style="--t:12s; left:-22px; top:12%;"><span>⭐</span></div>
+          <div class="floater" style="--t:13s; right: -22px; top:22%; --r:-20deg"><span>🔥</span></div>
+          <div class="floater" style="--t:11s; left:8%; bottom:-14px; --r:14deg"><span>🍄</span></div>
+          <div class="floater" style="--t:14s; right:6%; bottom:-18px"><span>🎮</span></div>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="headline">50/100‑Pack<br/> Cartoon Sticker Kit</h1>
+        <p style="font-size:18px; font-weight:600; margin: 6px 0 10px;">Waterproof • Laptop & Phone Safe • Ultra‑Vivid Color</p>
+
+        <div class="price-row">
+          <div class="price-now">NOK <span id="price">10.34</span></div>
+          <div class="price-was">NOK 70.67</div>
+          <span class="sale-tag">–40%</span>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:800; margin-bottom: 6px;">Choose your pack</div>
+          <div class="options" id="options">
+            <div class="chip active" data-qty="1">1 Pack</div>
+            <div class="chip" data-qty="3">3 Packs <span class="muted">(extra 5% off)</span></div>
+            <div class="chip" data-qty="5">5 Packs <span class="muted">(best value)</span></div>
+          </div>
+
+          <button id="buy" class="cta">
+            <span class="label">Buy Now</span>
+            <span class="boom" aria-hidden="true"></span>
+          </button>
+
+          <div class="trust-row">
+            <div class="trust">✅ Waterproof</div>
+            <div class="trust">🧲 Strong Adhesive</div>
+            <div class="trust">🚚 Tracked Shipping</div>
+            <div class="trust">💳 Secure Checkout</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="products" class="products">
-      <div class="container">
-        <h2 class="section-title">Featured products</h2>
-        <div id="grid" class="grid"></div>
+    <!-- FEATURES -->
+    <section>
+      <div class="features">
+        <div class="card">
+          <h3 class="feature">Stick Anywhere</h3>
+          <p>Perfect for laptops, phones, bottles, boards, cases & more. Leaves your gear looking <strong>mega‑fresh</strong>.</p>
+        </div>
+        <div class="card">
+          <h3 class="feature">Waterproof & Fade‑Safe</h3>
+          <p>Glossy vinyl + UV print keeps colors bright and edges crisp. Peel, stick, flex—no smudges.</p>
+        </div>
+        <div class="card">
+          <h3 class="feature">Surprise Mix</h3>
+          <p>Every pack is a unique combo. Unbox the fun with <em>classics, icons, and new favorites</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS MARQUEE -->
+    <section>
+      <h3 style="font-family:'Bangers', cursive; font-size:32px; margin: 0 0 12px;">What fans are saying</h3>
+      <div class="marquee">
+        <div class="marquee-track" id="reviews">
+          <div class="bubble">“Colors pop! My laptop looks like a comic book.” – Silje ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Great quality, no peeling after weeks.” – Jonas ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Kids loved the surprise mix.” – Lina ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Fast shipping to Bergen 👍” – Marius ⭐⭐⭐⭐⭐</div>
+          <!-- duplicated for seamless loop -->
+          <div class="bubble">“Colors pop! My laptop looks like a comic book.” – Silje ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Great quality, no peeling after weeks.” – Jonas ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Kids loved the surprise mix.” – Lina ⭐⭐⭐⭐⭐</div>
+          <div class="bubble">“Fast shipping to Bergen 👍” – Marius ⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="card">
+        <h3 style="margin-top:0">FAQ</h3>
+        <p><strong>What’s in a pack?</strong> A hand‑picked mix of 50 or 100 glossy cartoon stickers.</p>
+        <p><strong>Are these waterproof?</strong> Yes. Splash‑safe and UV‑printed to resist fading.</p>
+        <p><strong>Will they damage my device?</strong> No—adhesive is strong yet removes cleanly from most hard, non‑porous surfaces.</p>
+        <p><strong>Shipping & returns?</strong> Tracked shipping worldwide. 30‑day easy returns if unused.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <p>© <span id="year"></span> AI Checkout Store • Not affiliated with OpenAI</p>
+      <div>© <span id="year"></span> Sticker Blast – All rights reserved.</div>
+      <div class="muted" style="margin-top:6px">This fan‑style sticker mix is supplied by third‑party manufacturers. Ensure you have appropriate resale rights in your jurisdiction.</div>
     </div>
   </footer>
 
-  <!-- Safety: always remove veil on load even if libs fail -->
   <script>
-    window.addEventListener('load', function(){
-      const v = document.querySelector('.intro-veil');
-      if (v){ v.style.transition='opacity .6s ease'; v.style.opacity='0'; setTimeout(()=>v.remove(), 700); }
+    // ===== CONFIG: Replace these placeholders =====
+    const STORE_DOMAIN = 'yourstore.myshopify.com'; // e.g. mystore.myshopify.com
+    const VARIANT_ID = '0000000000'; // Shopify numeric variant ID for the 50pcs option
+    const CHECKOUT_URL_TEMPLATE = `https://${'${STORE_DOMAIN}'}/cart/${'${VARIANT_ID}'}:QTY?channel=buy_button`;
+    // ==============================================
+
+    // Quantity chips logic
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const buyBtn = document.getElementById('buy');
+
+    let qty = 1;
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      qty = Number(chip.dataset.qty);
+    }));
+
+    // Confetti burst
+    function confetti(node){
+      node.innerHTML = '';
+      for(let i=0;i<24;i++){
+        const s = document.createElement('span');
+        const x = (Math.random()*100)|0; const y = (Math.random()*100)|0;
+        s.style.position='absolute'; s.style.left=x+'%'; s.style.top=y+'%';
+        s.style.width = s.style.height = (8+Math.random()*10)+'px';
+        s.style.background = ['#000','#fff','var(--yellow)','var(--accent)','var(--accent-2)'][i%5];
+        s.style.border='2px solid #000'; s.style.transform='rotate('+((Math.random()*60)-30)+'deg)';
+        s.style.borderRadius='4px'; s.style.animation='explode .8s ease-out forwards';
+        node.appendChild(s);
+      }
+    }
+    const style = document.createElement('style');
+    style.textContent = `@keyframes explode{0%{opacity:1; transform: scale(.8) translate(0,0)}100%{opacity:0; transform: scale(1.8) translate(0,-22px)}}`;
+    document.head.appendChild(style);
+
+    // Buy Now → direct Shopify checkout URL (simple & fast)
+    buyBtn.addEventListener('click', () => {
+      confetti(buyBtn.querySelector('.boom'));
+      if (!STORE_DOMAIN || VARIANT_ID === '0000000000') {
+        alert('Setup needed: set STORE_DOMAIN and VARIANT_ID at the top of index.html');
+        return;
+      }
+      const href = `https://${STORE_DOMAIN}/cart/${VARIANT_ID}:${qty}?channel=buy_button`;
+      window.location.href = href;
     });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <!-- GSAP + ScrollTrigger -->
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis (smooth scroll) -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
-
-  <!-- three.js -->
-  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-
-  <!-- App (must be last) -->
-  <script src="/script.js"></script>
 </body>
 </html>
