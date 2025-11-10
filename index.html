@@ -2,171 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AIcheckout — Fun, trending merch</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <meta name="description" content="One-product store with instant Shopify checkout." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>aicheckout — Home</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <!-- Google Fonts: Instagram-ish vibe (Poppins + Rubik) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <meta name="description" content="aicheckout — playful mobile-first shopping experience." />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">AIcheckout</div>
-      <nav class="nav">
-        <a href="#features">Features</a>
-        <a href="#faq">FAQ</a>
-        <a href="#buy" class="btn btn-dark">Buy now</a>
-      </nav>
+<body class="theme-ig">
+  <!-- Sticky Sale Banner -->
+  <div class="sale-banner marquee">
+    <div class="marquee__track">
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/logo.svg" alt="aicheckout logo" class="logo" />
+      <strong>aicheckout</strong>
+    </div>
+    <nav class="top-actions">
+      <a href="/products.html" class="btn-ghost">Shop</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <h1>Bright. Playful. One-click fun.</h1>
-        <p class="lead">A clean one-product site with secure Shopify checkout. No cart, no clutter — just buy.</p>
-        <a href="#buy" class="btn btn-dark btn-lg">Get it now</a>
-        <div class="hero-bubbles" aria-hidden="true"></div>
-      </div>
-    </section>
+  <!-- Stories -->
+  <section class="stories-bar">
+    <div id="stories-track" class="stories-track" aria-label="Stories"></div>
+  </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="features">
-      <div class="container features-grid">
-        <div class="card">
-          <h3>Fast checkout</h3>
-          <p>Shopify handles payment, taxes, shipping.</p>
-        </div>
-        <div class="card">
-          <h3>Secure & trusted</h3>
-          <p>PCI compliance, saved wallets, local payments.</p>
-        </div>
-        <div class="card">
-          <h3>No distractions</h3>
-          <p>One product, clear offer, better conversion.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BUY SECTION -->
-    <section id="buy" class="buy">
-      <div class="container">
-        <h2>Buy it now</h2>
-        <p class="muted">Choose quantity and go straight to checkout.</p>
-
-        <!-- The Buy Button will render inside this div -->
-        <div id="product-component"></div>
-
-        <!-- Quantity shortcuts (optional) -->
-        <div class="qty-row">
-          <button class="btn qty" data-qty="1">1×</button>
-          <button class="btn qty" data-qty="3">3×</button>
-          <button class="btn qty" data-qty="5">5×</button>
-        </div>
-
-        <p class="note">Tip: To run a permanent 40% sale, set an <strong>Automatic discount</strong> in Shopify. Then every checkout reflects it without codes.</p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-      <div class="container">
-        <h2>FAQ</h2>
-        <details>
-          <summary>How does shipping work?</summary>
-          <p>Shipping options and rates come directly from Shopify at checkout.</p>
-        </details>
-        <details>
-          <summary>Returns?</summary>
-          <p>Set your policy in Shopify; link it here if you’d like.</p>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container tiny">
-      © <span id="year"></span> AIcheckout • All rights reserved
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media">
+      <!-- Optional hero video; replace hero-1.mp4 to customize -->
+      <video class="hero-video" src="/assets/video/hero-1.mp4" playsinline muted loop autoplay preload="metadata"></video>
+      <img class="hero-blob hero-blob-1" src="/assets/img/hero-blob-1.svg" alt="" />
+      <img class="hero-blob hero-blob-2" src="/assets/img/hero-blob-2.svg" alt="" />
     </div>
-  </footer>
+    <div class="hero-copy">
+      <h1 class="gradient-text">Swipe. Smile. Shop.</h1>
+      <p>Playful picks, bold colors, and everything’s on sale — always.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/products.html">Explore Products</a>
+        <button class="btn-secondary" data-scroll="#stories-track">View Stories</button>
+      </div>
+    </div>
+  </section>
 
-  <!-- Shopify Buy Button script -->
-  <script src="https://cdn.shopify.com/shopifycloud/buy-button/latest/buy-button-storefront.min.js" async></script>
+  <!-- Teasers -->
+  <section class="teasers">
+    <article class="teaser-card">
+      <img src="/assets/img/banner-sale.webp" alt="Sale banner" loading="lazy"/>
+      <div class="teaser-copy">
+        <h3>Hot Right Now</h3>
+        <p>Max-motion picks, short loops, bite-size fun.</p>
+      </div>
+    </article>
+    <article class="teaser-card">
+      <img src="/assets/img/placeholder-1x1.webp" alt="Teaser" loading="lazy"/>
+      <div class="teaser-copy">
+        <h3>Fresh Finds</h3>
+        <p>New drops added constantly. Scroll like it’s Instagram.</p>
+      </div>
+    </article>
+  </section>
 
-  <script>
-    // --- Replace with your values ---
-    const SHOP_DOMAIN = "YOUR_SHOPIFY_STORE_DOMAIN";            // e.g. yourstore.myshopify.com
-    const STOREFRONT_TOKEN = "YOUR_STOREFRONT_ACCESS_TOKEN";     // from Shopify
-    const PRODUCT_ID = "YOUR_PRODUCT_ID";                        // gid or numeric (Shopify snippet gives the correct form)
-    // ---------------------------------
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="/" class="nav-item active">
+      <img src="/assets/icons/home.svg" alt="" /><span>Home</span>
+    </a>
+    <a href="/products.html" class="nav-item">
+      <img src="/assets/icons/explore.svg" alt="" /><span>Explore</span>
+    </a>
+    <button class="nav-item" data-open-cart>
+      <img src="/assets/icons/cart.svg" alt="" /><span>Cart</span>
+    </button>
+    <button class="nav-item" data-open-profile>
+      <img src="/assets/icons/profile.svg" alt="" /><span>Profile</span>
+    </button>
+  </nav>
 
-    function loadBuyButton() {
-      if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-        initBuyButton();
-      } else {
-        setTimeout(loadBuyButton, 100);
-      }
-    }
+  <!-- Story Modal -->
+  <div id="story-modal" class="story-modal" aria-hidden="true">
+    <div class="story-modal__inner">
+      <button class="close-modal" aria-label="Close">&times;</button>
+      <div id="story-stage" class="story-stage"></div>
+      <div class="story-progress"><div class="story-bar"></div></div>
+    </div>
+    <div class="modal-backdrop"></div>
+  </div>
 
-    function initBuyButton() {
-      const client = window.ShopifyBuy.buildClient({
-        domain: SHOP_DOMAIN,
-        storefrontAccessToken: STOREFRONT_TOKEN,
-      });
-
-      window.ui = window.ShopifyBuy.UI.init(client);
-
-      window.ui.createComponent('product', {
-        id: PRODUCT_ID,
-        node: document.getElementById('product-component'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D', // ${{amount}} — adjust to your currency
-        options: {
-          product: {
-            iframe: false,
-            contents: {
-              img: true,
-              title: true,
-              price: true,
-              options: true,
-              quantity: true,
-              button: true
-            },
-            text: {
-              button: 'Buy now'
-            },
-            styles: {
-              product: { 'border-radius': '16px', 'padding': '16px', 'background': '#fff' },
-              button: { 'border-radius': '16px', 'padding': '14px 18px', 'background': '#111', 'color': '#fff' }
-            }
-          },
-          cart: { popup: false }, // go straight to checkout
-          modalProduct: { contents: { img: true, title: true, price: true, options: true, quantity: true, button: true } },
-          toggle: { sticky: false }
-        }
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // year in footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // load Shopify UI
-      loadBuyButton();
-
-      // Optional quantity shortcut buttons
-      document.querySelectorAll('.qty').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const qty = parseInt(btn.dataset.qty, 10);
-          // If widget rendered, set quantity input
-          const qtyInput = document.querySelector('.shopify-buy__quantity input, input[type="number"]');
-          if (qtyInput) {
-            qtyInput.value = qty;
-            qtyInput.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-        });
-      });
-    });
-  </script>
-
-  <script src="./script.js"></script>
+  <script src="/assets/js/stories.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 </body>
 </html>
