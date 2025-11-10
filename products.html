@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>aicheckout — Products</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="theme-ig">
+  <div class="sale-banner marquee">
+    <div class="marquee__track">
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
+      <span>EVERYTHING ON SALE • 24/7 DEALS • NEW DROPS DAILY • </span>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/logo.svg" alt="aicheckout logo" class="logo" />
+      <strong>Explore</strong>
+    </div>
+    <nav class="top-actions">
+      <!-- Placeholder for future Shopify button -->
+      <button class="btn-ghost" disabled title="Coming soon">Buy</button>
+    </nav>
+  </header>
+
+  <!-- Stories on products page too (keeps the IG feel) -->
+  <section class="stories-bar stories-condensed">
+    <div id="stories-track" class="stories-track" aria-label="Stories"></div>
+  </section>
+
+  <!-- Product Feed -->
+  <main id="product-feed" class="product-feed" aria-live="polite"></main>
+  <div id="feed-sentinel" class="feed-sentinel" aria-hidden="true"></div>
+
+  <nav class="bottom-nav">
+    <a href="/" class="nav-item">
+      <img src="/assets/icons/home.svg" alt="" /><span>Home</span>
+    </a>
+    <a href="/products.html" class="nav-item active">
+      <img src="/assets/icons/explore.svg" alt="" /><span>Explore</span>
+    </a>
+    <button class="nav-item" data-open-cart>
+      <img src="/assets/icons/cart.svg" alt="" /><span>Cart</span>
+    </button>
+    <button class="nav-item" data-open-profile>
+      <img src="/assets/icons/profile.svg" alt="" /><span>Profile</span>
+    </button>
+  </nav>
+
+  <template id="product-card-tpl">
+    <article class="product-card reveal">
+      <div class="media-wrap"></div>
+      <div class="prod-info">
+        <div class="left">
+          <h3 class="title"></h3>
+          <div class="price">
+            <span class="now"></span>
+            <span class="was"></span>
+          </div>
+        </div>
+        <div class="right">
+          <button class="btn-primary small" disabled title="Shopify coming soon">Buy</button>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge sale">SALE</span>
+      </div>
+    </article>
+  </template>
+
+  <script src="/assets/js/stories.js" defer></script>
+  <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
